@@ -1,18 +1,30 @@
-var  arrayOfStockPrices =  [1.42, 1.32, 1.45, 1.20, 1.34, 1.74, 1.10, 1.89, 1.42, 1.90] ; 
+var  arrayOfStockPrices =  [1.42, 1.32, 1.45, 1.20, 1.34, 1.74, 1.10, 1.89, 1.42, 1.90] ;
+var text = '';
+var lowprice = 99999999999;
+var highprice = 0;
 
-Function showBiggestProfit(arrayOfStockPrices){
+function showBiggestProfit(array){
 
-For each (arrayOfStockPrices) {
+    for (i = 0; i < array.length; i++) {
 
-StockPrices
+        if ( array[i] > highprice ) {
+            highprice = array[i];
+        }
 
-For each (arrayOfStockPrices) {
+        if ( array[i] < lowprice ) {
+            lowprice = array[i];
+        }
 
-StockPrices - StockPrices 
+
+    }
+    console.log('the high price is ' + highprice);
+    console.log('the low price is ' + lowprice);
+
+    var biggestProfit = highprice - lowprice;
+
+
+    document.getElementById("app").innerHTML = biggestProfit * 10000;
 
 }
 
-}
-
-
-}
+showBiggestProfit(arrayOfStockPrices);
